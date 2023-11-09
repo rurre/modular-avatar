@@ -1,5 +1,8 @@
 ﻿name: Test docs-site yarn installation
 on:
+  push:
+    branches:
+      - ci
   pull_request:
 
 jobs:
@@ -33,12 +36,13 @@ jobs:
       - name: Build CF site
         run: |
           cd docs-site~
-          yarn install --immutable
+          yarn install --immutable --check-cache
 
       - name: Display diff on failure
         if: ${{ failure() }}
         run: |
           cd docs-site~
+          env
           yarn install && git diff
 
 
