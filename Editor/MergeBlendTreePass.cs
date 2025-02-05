@@ -70,7 +70,7 @@ namespace nadena.dev.modular_avatar.core.editor
 
         private void ProcessComponent(ndmf.BuildContext context, ModularAvatarMergeBlendTree component)
         {
-            BlendTree componentBlendTree = component.BlendTree as BlendTree;
+            Motion componentBlendTree = component.BlendTree as Motion;
             
             if (componentBlendTree == null)
             {

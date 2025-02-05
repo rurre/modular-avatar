@@ -1,7 +1,7 @@
 ﻿#if MA_VRCSDK3_AVATARS
 
 using UnityEditor;
-using UnityEditor.Animations;
+using UnityEngine;
 using static nadena.dev.modular_avatar.core.editor.Localization;
 
 namespace nadena.dev.modular_avatar.core.editor
@@ -24,7 +24,7 @@ namespace nadena.dev.modular_avatar.core.editor
         {
             serializedObject.Update();
 
-            EditorGUILayout.ObjectField(_blendTree, typeof(BlendTree), G("merge_blend_tree.blend_tree"));
+            EditorGUILayout.ObjectField(_blendTree, typeof(Motion), G("merge_blend_tree.blend_tree"));
             EditorGUILayout.PropertyField(_pathMode, G("merge_blend_tree.path_mode"));
             if (_pathMode.enumValueIndex == (int) MergeAnimatorPathMode.Relative)
             {
